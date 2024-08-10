@@ -1276,7 +1276,7 @@ class KStyles {
       {required String text, Color color = kBlack, double? height}) {
     return Text(
       text,
-      style: TextStyle(
+      style: TextStyle(decoration: TextDecoration.underline,
           height: height,
           fontFamily: 'ClashDisplay',
           fontSize: 22.sp,

@@ -41,7 +41,7 @@ dependencies:
   cloud_firestore: ^5.2.1
   flutter_csc_picker: ^0.0.2
   csc_picker: ^0.2.7
-  fluttertoast: ^8.2.6
+  fluttertoast: any
   loading_animation_widget: ^1.2.1
   lottie: ^3.1.2
   file_picker: ^8.0.5

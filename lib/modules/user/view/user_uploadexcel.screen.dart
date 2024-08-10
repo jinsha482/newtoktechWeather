@@ -12,22 +12,31 @@ class UploadExcelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(appBar: AppBar(
-      backgroundColor: kWhite.withOpacity(0.9),title: KStyles().bold20(text: 'Excel Screen',),centerTitle: true,
+      backgroundColor: kWhite,title: KStyles().bold20(text: 'Excel Screen',),centerTitle: true,
     ),
-    backgroundColor: kWhite.withOpacity(0.9),
+    backgroundColor: kWhite,
     body:Consumer<ExcelService>(builder: (context, userCtrl, child) {
         return
      Padding(
        padding: const EdgeInsets.symmetric(horizontal: 10),
-       child: Column(mainAxisAlignment: MainAxisAlignment.center,
+       child: Column(
         children : [ 
-          
+           SizedBox(height: 50.h,),
+          KStyles().semiBold22(text: 'Upload Excel Sheet'),
+           SizedBox(height:60.h,),
         Center(
-          child: SizedBox(width: 200.w,height: 60.h,
-            child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: kWhite.withOpacity(0.9),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40),side: const BorderSide(color: kBlack))),
+          child: SizedBox(height: 60.h,
+            child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade100,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40),)),
               onPressed: (){
                 userCtrl.pickExcelFile(context);
-              }, child: Center(child: KStyles().semiBold16(text: 'Upload your excel sheet'),)))
+              }, child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  KStyles().semiBold16(text: 'Upload your excel sheet'),
+                  IconButton(onPressed: (){
+                     userCtrl.pickExcelFile(context);
+                  }, icon: const Icon(Icons.upload,color: kBlack,))
+                ],
+              )))
         )
         ]
            ),
