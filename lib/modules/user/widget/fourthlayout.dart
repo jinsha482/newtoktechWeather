@@ -26,11 +26,12 @@ class FourthLayoutScreen extends StatelessWidget {
                      ],
                    ),
                  ),
+                  SizedBox(height: 2.h,),
                Padding(
                  padding: EdgeInsets.symmetric(horizontal: 10.w),
                  child: KStyles().med12(text: userCtrl.setDate( userCtrl.weatherModel.location?.localtime.toString() ?? '',),color: kWhite),
                ),
-                  
+                   SizedBox(height: 2.h,),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: KStyles().bold22(text: '${userCtrl.weatherModel.current?.tempC}° C',color: kWhite),

@@ -17,7 +17,7 @@ class LocationService {
   }) async {
     try {
     
-      // Call the user's CollectionReference to add a new user
+     
       await location.add({
         'country': country,
         'state': state,

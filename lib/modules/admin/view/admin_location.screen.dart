@@ -95,6 +95,12 @@ class _AdminLocationScreenState extends State<AdminLocationScreen> {
                     if (value == 200){
                       locCtrl.setlocationStatus(false);
                      Navigator.pushNamed(context, 'success');
+                     locCtrl.countryValue = '';
+  locCtrl.stateValue = '';
+  locCtrl.cityValue = '';
+  locCtrl.districtCtrl.text = '';
+
+
                     }
                     else{
                      locCtrl.setlocationStatus(false);

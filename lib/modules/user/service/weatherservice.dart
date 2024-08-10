@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
+import '../../../global/constants/styles/colors/colors.dart';
 import '../model/weather.model.dart';
 import 'dart:convert';
 
@@ -71,7 +73,7 @@ return greeting;
        
       }
     } else {
-      print('Insufficient location data to fetch weather.');
+     
     }
   }
 
@@ -86,16 +88,15 @@ Future<Map<String, dynamic>?> getWeatherReport(String query,BuildContext context
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
        weatherModel = WeatherModel.fromJson(json.decode(response.body));
-       print(weatherModel.location?.country.toString());
-      print(data);
+       
       Navigator.pushNamed(context, 'weatherReport');
       notifyListeners();
       return data;
       
     } else {
-       notifyListeners();
-      print('Failed to fetch weather data. Status code: ${response.statusCode}');
-      print('Response body: ${response.body}');
+      
+       
+      notifyListeners();
       return null;
     }
     

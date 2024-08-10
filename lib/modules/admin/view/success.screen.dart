@@ -18,7 +18,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 5), () async {
+    Future.delayed(const Duration(seconds: 3), () async {
         Navigator.pushNamedAndRemoveUntil(context, 'locationScreen', (route) => false);
     });
     

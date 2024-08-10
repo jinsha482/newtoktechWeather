@@ -3,8 +3,10 @@ import 'dart:io';
 import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
+import '../../../global/constants/styles/colors/colors.dart';
 import 'weatherservice.dart';
 
 
@@ -46,6 +48,13 @@ class ExcelService extends ChangeNotifier {
           if (header.contains('state')) stateCol = i;
           if (header.contains('district')) districtCol = i;
           if (header.contains('city')) cityCol = i;
+        }
+        else{
+           Fluttertoast.showToast(textColor: kWhite,
+                       gravity: ToastGravity.TOP,
+              msg: 'Incorrect Data Passed',
+              backgroundColor:Colors.red.shade500,
+            );
         }
       }
       for (var row in sheet.rows.skip(1)) { 
