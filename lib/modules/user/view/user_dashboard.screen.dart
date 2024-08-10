@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newtoktechassignment/global/constants/styles/colors/colors.dart';
 import 'package:newtoktechassignment/global/constants/styles/text_styles/text_styles.dart';
@@ -44,9 +45,13 @@ class _UserDashBoardScreenState extends State<UserDashBoardScreen> {
               children: [
                 SizedBox(height: 10.h,),
               Row(mainAxisAlignment: MainAxisAlignment.end,
-                children: [Container(padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color:Colors.green.shade200,),
-                child: KStyles().semiBold13(text: 'Upload your Excel Sheet')),
+                children: [GestureDetector(onTap: (){
+                    Navigator.pushNamed(context, 'uploadExcel');
+                },
+                  child: Container(padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color:Colors.green.shade200,),
+                  child: KStyles().semiBold13(text: 'Upload your Excel Sheet')),
+                ),
               IconButton(onPressed: (){
                 Navigator.pushNamed(context, 'uploadExcel');
               }, icon: const Icon( Icons.forward,color: Colors.green,))],),

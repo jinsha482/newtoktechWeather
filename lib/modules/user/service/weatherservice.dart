@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
-import '../../../global/constants/styles/colors/colors.dart';
+
 import '../model/weather.model.dart';
 import 'dart:convert';
 

@@ -29,27 +29,24 @@ class FirstWeatherLayoutScreen extends StatelessWidget {
                     SizedBox(height: 5.h,),
                     Column(crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(mainAxisAlignment: MainAxisAlignment.start,
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [ 
-                          Expanded(flex:1,
-                            child: Image.asset(cloud,width: 30.w,height: 30.h,)), Expanded(flex:1,child:Image.asset(wind,width: 30.w,height: 30.h)), Expanded(flex:1,child:Image.asset(humidity,width: 30.w,height: 30.h))
+                          Image.asset(cloud,width: 30.w,height: 30.h,), Image.asset(wind,width: 30.w,height: 30.h), Image.asset(humidity,width: 30.w,height: 30.h)
                         ],),
                          SizedBox(height: 5.h,),
-                         Row(mainAxisAlignment: MainAxisAlignment.start,children: [ 
-                      Expanded(flex:1, 
-                        child: KStyles().semiBold10(text: 'Humidity')), Expanded(flex:1,child:KStyles().semiBold10(text: 'Wind')), Expanded(flex:1,child:KStyles().semiBold10(text: 'Cloud'))
+                         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [ 
+                      KStyles().semiBold10(text: 'Humidity'), KStyles().semiBold10(text: 'Wind'), KStyles().semiBold10(text: 'Cloud')
                     ],),
                      SizedBox(height: 5.h,),
                      Padding(
                        padding: const EdgeInsets.only(left:8.0),
-                       child: Row(mainAxisAlignment: MainAxisAlignment.start,children: [ 
-                        Expanded(flex:1,
-                          child: KStyles().semiBold10(text: userCtrl.weatherModel.current?.humidity.toString() ?? '')), Expanded(flex:1,child:KStyles().semiBold10(text: userCtrl.weatherModel.current?.windDegree.toString() ?? '' )), Expanded(flex:1,child:KStyles().semiBold10(text: userCtrl.weatherModel.current?.cloud.toString() ?? ''))
+                       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [ 
+                        KStyles().semiBold10(text: userCtrl.weatherModel.current?.humidity.toString() ?? ''), KStyles().semiBold10(text: userCtrl.weatherModel.current?.windDegree.toString() ?? '' ), KStyles().semiBold10(text: userCtrl.weatherModel.current?.cloud.toString() ?? '')
                                          ],),
                      )
                       ],
                     ),
-                   SizedBox(height: 10.h,)
+                   SizedBox(height: 20.h,)
                    ],
                    ),
                ),);
